@@ -42,12 +42,16 @@ def D_to_B():
         algarithm = value_algarithm.pop()
         bin_value_converted += str(algarithm)
         counter -= 1
+    result(bin_value_converted)
 
-    print("O valor convertido é:", bin_value_converted)
-    initialization()
+def B_to_D(f):
+    if f == 0:
+        flag = True
+    elif f == 1:
+        flag = False
 
-def B_to_D():
     usr_inpt = input('Insira o Binário para conversão: ')
+    flag = True
 
     algarithm_separation = list(usr_inpt)
     counter = len(algarithm_separation)
@@ -65,9 +69,11 @@ def B_to_D():
             result = 2**exponential_counter
             total += result
         exponential_counter -= 1
-
-    print("O valor convertido é:", total)
-    initialization()
+    
+    if flag == True:
+        result(total)
+    elif flag == False:
+        return total
 
 def D_to_H():
     value_list = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
@@ -114,12 +120,16 @@ def D_to_H():
         hex_value_converted += str(algarithm)
         counter -= 1
 
-    print("O valor convertido é:", hex_value_converted)
-    initialization()
+    result(hex_value_converted)
 
-def H_to_D():
+def H_to_D(f):
+    if f == 0:
+        flag = True
+    elif f == 1:
+        flag = False
+
     value_list = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-
+    
     usr_inpt = input('Insira o Hexadecimal para conversão: ')
     algarithm_separation = list(usr_inpt)
     for x in range(len(algarithm_separation)):
@@ -142,20 +152,26 @@ def H_to_D():
         exponential_counter -= 1
 
     converted = total + last_algarithm_addition
-    print("O valor convertido é:", converted)
+    if flag == True:
+        result(converted)
+    elif flag == False:
+        return converted
+
+def result(x):
+    print("O valor convertido é:", x)
     initialization()
 
 def Bin():
     conversion_inpt_selector = int(input('1-Binário -> Decimal  2-Decimal -> Binário  : '))
     if conversion_inpt_selector == 1:
-        B_to_D()
+        B_to_D(0)
     elif conversion_inpt_selector == 2:
         D_to_B()
 
 def Hex():
     conversion_inpt_selector = int(input('1-Hexadecimal -> Decimal  2-Decimal -> Hexadecimal  : '))
     if conversion_inpt_selector == 1:
-        H_to_D()
+        H_to_D(0)
     elif conversion_inpt_selector == 2:
         D_to_H()
 
@@ -168,5 +184,14 @@ def initialization():
         Hex()
     elif conversion_inpt_selector == 3:
         print('Goodbye!')
+
+
+
+
+
+
+
+
+
 
 initialization()
