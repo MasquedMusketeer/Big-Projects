@@ -177,12 +177,14 @@ def Hex():
 
 
 def initialization():
-    conversion_inpt_selector = int(input('1-Binário  2-Hexadecimal  3-Exit  : '))
+    conversion_inpt_selector = int(input('1-Binário  2-Hexadecimal  3-Hex-Bin  4-Exit  : '))
     if conversion_inpt_selector == 1:
         Bin()
     elif conversion_inpt_selector == 2:
         Hex()
     elif conversion_inpt_selector == 3:
+        Hex-Bin()
+    elif conversion_inpt_selector == 4:
         print('Goodbye!')
 
 
