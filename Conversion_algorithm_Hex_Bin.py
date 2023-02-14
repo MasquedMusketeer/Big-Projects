@@ -208,13 +208,4 @@ def initialization():
     elif conversion_inpt_selector == 4:
         print('Goodbye!')
 
-
-
-
-
-
-
-
-
-
 initialization()
