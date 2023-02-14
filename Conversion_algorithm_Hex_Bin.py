@@ -42,7 +42,7 @@ def D_to_B():
         algarithm = value_algarithm.pop()
         bin_value_converted += str(algarithm)
         counter -= 1
-    result(bin_value_converted)
+    result_Display(bin_value_converted)
 
 def B_to_D(f,v):
     if f == 0:
@@ -71,9 +71,9 @@ def B_to_D(f,v):
             result = 2**exponential_counter
             total += result
         exponential_counter -= 1
-        
+
     if flag == True:
-        result(total)
+        result_Display(total)
     elif flag == False:
         D_to_H(total)
 
@@ -122,7 +122,7 @@ def D_to_H():
         hex_value_converted += str(algarithm)
         counter -= 1
 
-    result(hex_value_converted)
+    result_Display(hex_value_converted)
 
 def H_to_D(f,v):
     if f == 0:
@@ -158,11 +158,11 @@ def H_to_D(f,v):
 
     converted = total + last_algarithm_addition
     if flag == True:
-        result(converted)
+        result_Display(converted)
     elif flag == False:
         D_to_B(converted)
 
-def result(x):
+def result_Display(x):
     print("O valor convertido é:", x)
     initialization()
 
@@ -171,7 +171,7 @@ def H_to_B():
     H_to_D(1,usr_inpt)
 
 def B_to_H():
-    usr_inpt = input('Insira o Hexadecimal para conversão: ')
+    usr_inpt = input('Insira o Binario para conversão: ')
     B_to_D(1,usr_inpt)
 
 def Hex_Bin():
@@ -204,7 +204,7 @@ def initialization():
     elif conversion_inpt_selector == 2:
         Hex()
     elif conversion_inpt_selector == 3:
-        Hex-Bin()
+        Hex_Bin()
     elif conversion_inpt_selector == 4:
         print('Goodbye!')
 
