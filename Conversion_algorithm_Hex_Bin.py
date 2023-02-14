@@ -161,6 +161,17 @@ def result(x):
     print("O valor convertido é:", x)
     initialization()
 
+def H_to_B():
+    
+
+def Hex_Bin():
+    conversion_inpt_selector = int(input('1-Binário -> Hexadecimal  2-Hexadecimal -> Binário  : '))
+    if conversion_inpt_selector == 2:
+        H_to_B()
+    elif conversion_inpt_selector == 1:
+        B_to_H()
+
+
 def Bin():
     conversion_inpt_selector = int(input('1-Binário -> Decimal  2-Decimal -> Binário  : '))
     if conversion_inpt_selector == 1:
