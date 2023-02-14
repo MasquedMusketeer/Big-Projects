@@ -71,7 +71,7 @@ def B_to_D(f,v):
             result = 2**exponential_counter
             total += result
         exponential_counter -= 1
-    
+        
     if flag == True:
         result(total)
     elif flag == False:
