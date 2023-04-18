@@ -4,6 +4,17 @@ def Expressions():
     print('Type the mathematical expression to be done and validated: ')
     usr_inpt = input('>>> ')
     processingList = list(usr_inpt)
+    valueList = ['(',')','{','[',']','}']
+    valueCompare = []
+    counter = len(processingList)
+    while counter > 0:
+        value = processingList.pop(0)
+        if value in valueList:
+            valueCompare.append(value)
+        else:
+            processingList.append(value)
+        counter -= 1
+    print(valueCompare)
     print(processingList)
     MainMenu()
 
