@@ -1,5 +1,9 @@
 lineOfOP = []
 
+
+#===========================================================================
+#(preciso de ajuda nessa parte lol)
+
 def Expressions():
     print('Type the mathematical expression to be done and validated: ')
     usr_inpt = input('>>> ')
@@ -21,7 +25,7 @@ def Expressions():
 
 
 
-
+#==========================================================================
 
 
 
