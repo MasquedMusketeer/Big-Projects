@@ -3,7 +3,11 @@ lineOfOP = []
 def Expressions():
     print('Type the mathematical expression to be done and validated: ')
     usr_inpt = input('>>> ')
-    
+    processingList = list(usr_inpt)
+    print(processingList)
+    MainMenu()
+
+
 
 
 
@@ -158,6 +162,7 @@ def endSequence():
     print('We thank your preference, come back later!')
 
 def MainMenu():
+    print('1-Operations 2-Expression 0-Exit')
     usr_inpt = int(input('>>>  '))
     if usr_inpt == 0:
         endSequence()
@@ -172,7 +177,6 @@ def MainMenu():
 def initialization():
     print('Welcome to the Line Calculator Project 1.0')
     print('Here are the options:')
-    print('1-Operations 2-Expression 0-Exit')
     MainMenu()
     
 initialization()
