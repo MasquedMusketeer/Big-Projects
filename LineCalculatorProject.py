@@ -1,5 +1,21 @@
 lineOfOP = []
 
+def Expressions():
+    print('Type the mathematical expression to be done and validated: ')
+    usr_inpt = input('>>> ')
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 def fullOP():
     counter = len(lineOfOP)
@@ -57,7 +73,7 @@ def add():
     valueList = ["+"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be added. When done, type "done":')
+        usr_choice = input('Insert values to be added. When done, type "done": ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -69,7 +85,7 @@ def sub():
     valueList = ["-"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be subtracted. When done, type "done":')
+        usr_choice = input('Insert values to be subtracted. When done, type "done": ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -81,7 +97,7 @@ def mult():
     valueList = ["*"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be multiplied. When done, type "done":')
+        usr_choice = input('Insert values to be multiplied. When done, type "done": ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -93,7 +109,7 @@ def div():
     valueList = ["/"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be divided. When done, type "done":')
+        usr_choice = input('Insert values to be divided. When done, type "done": ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -115,6 +131,9 @@ def AvailableOP():
         mult()
     elif usr_inpt3 == 4:
         div()
+    else:
+        print('No available operation matching input, try again...')
+        AvailableOP()
 
 def Operations():
     print('Here are the operations available')
@@ -131,6 +150,9 @@ def Operations():
         lineDictator(3,0)
     elif usr_inpt2 == 0:
         initialization()
+    else:
+        print('No available operation matching input, try again...')
+        Operations()
 
 def endSequence():
     print('We thank your preference, come back later!')
@@ -141,10 +163,10 @@ def MainMenu():
         endSequence()
     elif usr_inpt == 1:
         Operations()
-    #elif usr_inpt == 2:
-     #   Expressions()
+    elif usr_inpt == 2:
+        Expressions()
     else:
-        print('No available operation maching input, try again...')
+        print('No available operation matching input, try again...')
         MainMenu()
 
 def initialization():
