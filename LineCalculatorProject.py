@@ -132,7 +132,10 @@ def div():
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
-            valueList.append(int(usr_choice))
+            if usr_choice == 0:
+                print('Divisions by 0 are not permited.')
+            else:
+                valueList.append(int(usr_choice))
     lineDictator(valueList,1)
     Operations()
     
