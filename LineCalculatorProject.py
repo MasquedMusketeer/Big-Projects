@@ -27,7 +27,8 @@ def Expressions():
     comparingStack.reverse()
     for value in valueCompare:
         stackTop = comparingStack.pop(0)
-        if stackTop+value in validPairs:
+        validationCounter = 0
+        if stackTop+value in validPairs and validationCounter == validPairs.index(stackTop+value):
             validationFlag += 1
             compareIndex -= 1
         else:
@@ -37,7 +38,7 @@ def Expressions():
         print('The expression is valid.')
         MainMenu()
     elif invalidationFlag >= 1:
-        print('The expression is not valid')
+        print('The expression is not valid.')
         MainMenu()
 
 def fullOP():
