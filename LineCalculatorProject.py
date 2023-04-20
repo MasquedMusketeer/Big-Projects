@@ -25,16 +25,16 @@ def Expressions():
     validationFlag = 0
     invalidationFlag = 0
     comparingStack.reverse()
+    validationCounter = 0
     for value in valueCompare:
         stackTop = comparingStack.pop(0)
-        validationCounter = 0
         if stackTop+value in validPairs and validationCounter == validPairs.index(stackTop+value):
             validationFlag += 1
             compareIndex -= 1
-            validationCounter =+ 1
         else:
             invalidationFlag += 1
             compareIndex -= 1
+        validationCounter += 1
     if invalidationFlag == 0:
         print('The expression is valid.')
         MainMenu()
