@@ -16,21 +16,28 @@ def Expressions():
             processingList.append(value)
         counter -= 1
     counterCompare = len(valueCompare)/2
+    compareIndex = counterCompare
     while counterCompare > 0:
         transition = valueCompare.pop(0)
         comparingStack.append(transition)
         counterCompare -= 1
-    
-
-    MainMenu()
-
-
-
-
-
-
-
-
+    validationFlag = 0
+    invalidationFlag = 0
+    for value in valueCompare:
+        if value == comparingStack.index(compareIndex-1):
+            validationFlag += 1
+            comparingStack.pop()
+            compareIndex -= 1
+        else:
+            invalidationFlag += 1
+            comparingStack.pop()
+            compareIndex -= 1
+    if invalidationFlag == 0:
+        print('The expression is valid.')
+        MainMenu()
+    elif invalidationFlag >= 1:
+        print('The expression is not valid')
+        MainMenu()
 
 def fullOP():
     counter = len(lineOfOP)
