@@ -1,15 +1,12 @@
 lineOfOP = []
 
-
-#===========================================================================
-#(preciso de ajuda nessa parte lol)
-
 def Expressions():
     print('Type the mathematical expression to be done and validated: ')
     usr_inpt = input('>>> ')
     processingList = list(usr_inpt)
     valueList = ['(',')','{','[',']','}']
     valueCompare = []
+    comparingStack = []
     counter = len(processingList)
     while counter > 0:
         value = processingList.pop(0)
@@ -18,15 +15,14 @@ def Expressions():
         else:
             processingList.append(value)
         counter -= 1
-    print(valueCompare)
-    print(processingList)
+    counterCompare = len(valueCompare)/2
+    while counterCompare > 0:
+        transition = valueCompare.pop(0)
+        comparingStack.append(transition)
+        counterCompare -= 1
+    
+
     MainMenu()
-
-
-
-
-#==========================================================================
-
 
 
 
