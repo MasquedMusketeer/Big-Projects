@@ -25,8 +25,6 @@ def Expressions():
     validationFlag = 0
     invalidationFlag = 0
     comparingStack.reverse()
-    print(comparingStack)
-    print(valueCompare)
     for value in valueCompare:
         stackTop = comparingStack.pop(0)
         if stackTop+value in validPairs:
