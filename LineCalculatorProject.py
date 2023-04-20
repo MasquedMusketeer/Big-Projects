@@ -23,14 +23,14 @@ def Expressions():
         counterCompare -= 1
     validationFlag = 0
     invalidationFlag = 0
+    comparingStack.reverse()
     for value in valueCompare:
-        if value == comparingStack.index(compareIndex-1):
+        stackTop = comparingStack.pop(0)
+        if value == stackTop:
             validationFlag += 1
-            comparingStack.pop()
             compareIndex -= 1
         else:
             invalidationFlag += 1
-            comparingStack.pop()
             compareIndex -= 1
     if invalidationFlag == 0:
         print('The expression is valid.')
