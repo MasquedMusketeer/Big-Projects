@@ -1,10 +1,11 @@
 lineOfOP = []
 
 def Expressions():
-    print('Type the mathematical expression to be done and validated: ')
+    print('Type the mathematical expression to be validated: ')
     usr_inpt = input('>>> ')
     processingList = list(usr_inpt)
     valueList = ['(',')','{','[',']','}']
+    validPairs = ['()','[]','{}']
     valueCompare = []
     comparingStack = []
     counter = len(processingList)
@@ -24,9 +25,11 @@ def Expressions():
     validationFlag = 0
     invalidationFlag = 0
     comparingStack.reverse()
+    print(comparingStack)
+    print(valueCompare)
     for value in valueCompare:
         stackTop = comparingStack.pop(0)
-        if value == stackTop:
+        if stackTop+value in validPairs:
             validationFlag += 1
             compareIndex -= 1
         else:
@@ -147,14 +150,14 @@ def AvailableOP():
     print('2-Subtraction(-)')
     print('3-Multiplication(*)')
     print('4-Division(/)')
-    usr_inpt3 = int(input('>>>  '))
-    if usr_inpt3 == 1:
+    usr_inpt3 = (input('>>>  '))
+    if usr_inpt3 == '1':
         add()
-    elif usr_inpt3 == 2:
+    elif usr_inpt3 == '2':
         sub()
-    elif usr_inpt3 == 3:
+    elif usr_inpt3 == '3':
         mult()
-    elif usr_inpt3 == 4:
+    elif usr_inpt3 == '4':
         div()
     else:
         print('No available operation matching input, try again...')
@@ -166,14 +169,14 @@ def Operations():
     print('2- Do the next operation in line')
     print('3- Do all line operations')
     print('0- Go back to main menu')
-    usr_inpt2 = int(input('>>>  '))
-    if usr_inpt2 == 1:
+    usr_inpt2 = (input('>>>  '))
+    if usr_inpt2 == '1':
         AvailableOP()
-    elif usr_inpt2 == 2:
+    elif usr_inpt2 == '2':
         lineDictator(2,0)
-    elif usr_inpt2 == 3:
+    elif usr_inpt2 == '3':
         lineDictator(3,0)
-    elif usr_inpt2 == 0:
+    elif usr_inpt2 == '0':
         initialization()
     else:
         print('No available operation matching input, try again...')
@@ -184,12 +187,12 @@ def endSequence():
 
 def MainMenu():
     print('1-Operations 2-Expression 0-Exit')
-    usr_inpt = int(input('>>>  '))
-    if usr_inpt == 0:
+    usr_inpt = (input('>>>  '))
+    if usr_inpt == '0':
         endSequence()
-    elif usr_inpt == 1:
+    elif usr_inpt == '1':
         Operations()
-    elif usr_inpt == 2:
+    elif usr_inpt == '2':
         Expressions()
     else:
         print('No available operation matching input, try again...')
