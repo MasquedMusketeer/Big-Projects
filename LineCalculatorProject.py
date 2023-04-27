@@ -172,7 +172,7 @@ def AvailableOP():
 def Operations():
     print('----------------------------------------------------')
     print('|       Here are the operations available          |')
-    print('|        1- Add operation to the linen             |')
+    print('|        1- Add operation to the line              |')
     print('|        2- Do the next operation in line          |')
     print('|        3- Do all line operations                 |')
     print('|        0- Go back to main menu                   |')
