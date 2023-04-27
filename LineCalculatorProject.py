@@ -1,7 +1,7 @@
 lineOfOP = []
 
 def Expressions():
-    print('Type the mathematical expression to be validated: ')
+    print('<< Type the mathematical expression to be validated: >>')
     usr_inpt = input('>>> ')
     processingList = list(usr_inpt)
     valueList = ['(',')','{','[',']','}']
@@ -36,10 +36,10 @@ def Expressions():
             compareIndex -= 1
         validationCounter += 1
     if invalidationFlag == 0:
-        print('The expression is valid.')
+        print('>>>  The expression is valid.  <<<')
         MainMenu()
     elif invalidationFlag >= 1:
-        print('The expression is not valid.')
+        print('>>>  The expression is not valid.  <<<')
         MainMenu()
 
 def fullOP():
@@ -52,14 +52,14 @@ def fullOP():
 def singleOP(x):
     if bool(lineOfOP) == False:
         print('')
-        print('>>>The list of operations is empty<<<')
+        print('>>>  The list of operations is empty  <<<')
         print('')
         Operations()
     else:
         print('')
         flag = x
         op = lineOfOP.pop(0)
-        print(op)
+        print('>>> ',op," <<<")
         operation = op.pop(0)
         result = 0
         if operation == '+':
@@ -77,7 +77,7 @@ def singleOP(x):
             result = op.pop(0)
             for x in op:
                 result = result/x
-        print('Result of Operation: ',result)
+        print('>>> Result of Operation: ',result,' <<<')
         print('')
         if flag == 0:
             Operations()
@@ -95,10 +95,11 @@ def lineDictator(x,y):
             fullOP()
 
 def add():
+    print('<< Insert values to be added. When done, type "done" >>')
     valueList = ["+"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be added. When done, type "done": ')
+        usr_choice = input('>>>  ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -107,10 +108,11 @@ def add():
     Operations()
 
 def sub():
+    print('<< Insert values to be subtracted. When done, type "done" >>')
     valueList = ["-"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be subtracted. When done, type "done": ')
+        usr_choice = input('>>>  ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -119,10 +121,11 @@ def sub():
     Operations()
 
 def mult():
+    print('<< Insert values to be multiplyed. When done, type "done" >>')
     valueList = ["*"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be multiplied. When done, type "done": ')
+        usr_choice = input('>>>  ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
@@ -131,25 +134,28 @@ def mult():
     Operations()
 
 def div():
+    print('<< Insert values to be divided. When done, type "done" >>')
     valueList = ["/"]
     flag = 0
     while flag == 0:
-        usr_choice = input('Insert values to be divided. When done, type "done": ')
+        usr_choice = input('>>>  ')
         if usr_choice == 'done' or usr_choice == 'Done':
             flag = 1
         else:
-            if usr_choice == 0:
-                print('Divisions by 0 are not permited.')
+            if int(usr_choice) == 0:
+                print('>>>  Divisions by 0 are not permited.  <<<')
             else:
                 valueList.append(int(usr_choice))
     lineDictator(valueList,1)
     Operations()
     
 def AvailableOP():
-    print('1-Addition(+)')
-    print('2-Subtraction(-)')
-    print('3-Multiplication(*)')
-    print('4-Division(/)')
+    print('----------------------------------------------------')
+    print('|                  1-Addition(+)                   |')
+    print('|                 2-Subtraction(-)                 |')
+    print('|                3-Multiplication(*)               |')
+    print('|                  4-Division(/)                   |')
+    print('----------------------------------------------------')
     usr_inpt3 = (input('>>>  '))
     if usr_inpt3 == '1':
         add()
@@ -164,11 +170,13 @@ def AvailableOP():
         AvailableOP()
 
 def Operations():
-    print('Here are the operations available')
-    print('1- Add operation to the line')
-    print('2- Do the next operation in line')
-    print('3- Do all line operations')
-    print('0- Go back to main menu')
+    print('----------------------------------------------------')
+    print('|       Here are the operations available          |')
+    print('|        1- Add operation to the linen             |')
+    print('|        2- Do the next operation in line          |')
+    print('|        3- Do all line operations                 |')
+    print('|        0- Go back to main menu                   |')
+    print('----------------------------------------------------')
     usr_inpt2 = (input('>>>  '))
     if usr_inpt2 == '1':
         AvailableOP()
@@ -179,14 +187,19 @@ def Operations():
     elif usr_inpt2 == '0':
         initialization()
     else:
-        print('No available operation matching input, try again...')
+        print('>>>> No available operation matching input, try again... <<<<')
         Operations()
 
 def endSequence():
-    print('We thank your preference, come back later!')
+    print('----------------------------------------------------')
+    print('|    We thank your preference, come back later!    |')
+    print('----------------------------------------------------')
 
 def MainMenu():
-    print('1-Operations 2-Expression 0-Exit')
+    print('----------------------------------------------------')
+    print('|              Here are the options:               |')
+    print('|         1-Operations 2-Expression 0-Exit         |')
+    print('----------------------------------------------------')
     usr_inpt = (input('>>>  '))
     if usr_inpt == '0':
         endSequence()
@@ -195,12 +208,15 @@ def MainMenu():
     elif usr_inpt == '2':
         Expressions()
     else:
-        print('No available operation matching input, try again...')
+        print('-----------------------------------------------------')
+        print('|No available operation matching input, try again...|')
+        print('-----------------------------------------------------')
         MainMenu()
 
 def initialization():
-    print('Welcome to the Line Calculator Project 1.0')
-    print('Here are the options:')
+    print('----------------------------------------------------')
+    print('|     Welcome to the Line Calculator Project 1.1   |')
+    print('----------------------------------------------------')
     MainMenu()
     
 initialization()
