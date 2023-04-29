@@ -221,4 +221,4 @@ def initialization():
     
 initialization()
 
-#Trabalho de André de Freitas Pereira, 
+#Trabalho de André de Freitas Pereira, Breno Nunes de Souza e Luiz Henrique Alemida da Silva
