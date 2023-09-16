@@ -29,7 +29,14 @@ def dayMonthEncoder (day, month):
         if setStart > 7:
             setStart = 1
 #day to be recorded for next month calculation:
-    nextDayMonth = setStart
+    nextMonth = month + 1
+    if nextMonth > 12:
+        nextMonth = 1
+    if nextMonth > 9:
+        nextDayMonth = str(setStart) + str(nextMonth)
+    else:
+        nextDayMonth = str(setStart) + ("0" + str(nextMonth))
+
 #returning result:
-    result = [fullDay, HalfDay, nextDayMonth]
+    result = [fullDay, HalfDay, int(nextDayMonth)]
     return result
