@@ -1,0 +1,2 @@
+#dia da semana e mes do relatorio/dinheiro da meia/dinheiro da inteira/total de conduçao/total salario/total faculdade/total a guardar/total guardado/porcentagem de gasto em comida/porcentagem de desperdicio
+512,00.00,00.00,000.00,0000.00,000.00,0000.00,000000.00,00.00,00.00

@@ -1,8 +1,9 @@
 month28 = [2]
 month30 = [4,6,9,11]
 
-def dayMonthEncoder (day, month):
-    setStart = day
+def dayMonthEncoder (daymonth):
+    setStart = daymonth.pop(0)
+    month = daymonth.pop(0)
     dayCounter = 0
     fullDay = 0
     HalfDay = 0

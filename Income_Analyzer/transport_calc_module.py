@@ -1,6 +1,6 @@
-def totalValueCalculator(dastrmResult):
-    halfDay = dastrmResult.pop(0)
-    fullDay = dastrmResult.pop(0)
+def totalValueCalculator(damomResult):
+    halfDay = damomResult.pop(0)
+    fullDay = damomResult.pop(0)
     totalUnitsHalfEntry = halfDay + 2 * fullDay
     totalUnitsFullEntry = halfDay + fullDay
     totalHalfDay = totalUnitsHalfEntry * 2.2
